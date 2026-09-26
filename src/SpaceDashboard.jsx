@@ -27,7 +27,7 @@ export default function SpaceDashboard({ selectedDate,  isOpen, setIsOpen, isRsO
         const controller = new AbortController();
         setLoading(true);
 
-        const rawBackendUrl = import.meta.env.VITE_API_URL || 'https://backend-remote-sensing.vercel.app/';
+        const rawBackendUrl = import.meta.env.VITE_API_URL || 'https://backend-remote-sensing.vercel.app';
         const backendUrl = rawBackendUrl.replace(/\/$/, '');
 
         fetch(`${backendUrl}/api/neows?start_date=${selectedDate}&end_date=${selectedDate}`, {
