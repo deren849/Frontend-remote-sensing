@@ -1,16 +1,29 @@
-# React + Vite
+# 🛰️ NASA Remote Sensing & NeoWs Radar - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi web GIS interaktif untuk menampilkan citra satelit penginderaan jauh NASA Worldview dan radar pelacak asteroid terdekat (*Near-Earth Objects*) secara real-time.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Fitur Utama
 
-## React Compiler
+- **🛰️ Interactive Satellite Map**: Visualisasi lapisan citra satelit bumi dari NASA.
+- **☄️ Radar Asteroid (NeoWs)**: Pemantauan lintasan objek dekat bumi berbasis API NASA.
+- **♿ Panel Aksesibilitas**: Pengaturan ukuran teks, filter buta warna, tema antarmuka, dan Text-to-Speech (TTS).
+- **⚡ Fast API Integration**: Komunikasi asynchronous dengan backend FastAPI di cloud.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React, Vite, JavaScript / CSS
+- **API Backend**: FastAPI (Deployed on Vercel)
+- **Deployment**: Vercel
+
+---
+
+## ⚙️ Environment Variables
+
+Buat file `.env` di root folder proyek frontend:
+
+```env
+VITE_API_URL=[https://backend-remote-sensing.vercel.app](https://backend-remote-sensing.vercel.app)
