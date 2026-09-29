@@ -1,5 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useMapEvents, Polyline, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+
+const customMarker = new L.icon({
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+})
 
 function getHaversineDistance(coords1, coords2) {
   const R = 6371;
@@ -73,7 +84,7 @@ export default function DistanceMeasure({ isActive, speakText, language = 'id' }
     <>
       <Polyline positions={points} color="#f59e0b" weight={4} dashArray="6, 8" />
       {points.map((pt, idx) => (
-        <Marker key={idx} position={pt}>
+        <Marker key={idx} position={pt} icon={customMarker}>
           <Popup>{idx === 0 ? "Titik Awal (A)" : "Titik Akhir (B)"}</Popup>
         </Marker>
       ))}
