@@ -96,6 +96,10 @@ export default function LandingPage({
     }
   };
 
+  useEffect(() => {
+    document.documentElement.setAttribute('data-font-size', fontSize);
+  }, [fontSize])
+
   const t = content[language];
 
   useEffect(() => {
@@ -139,7 +143,6 @@ export default function LandingPage({
           <button className='btn-secondary' onClick={() => setShowAbout(true)}>{t.aboutBtn}</button>
           <button className='btn-primary' onClick={onLaunchMap}>{t.exploreBtn}</button>
 
-          {/* Panel Aksesibilitas Popover */}
           {isAccessOpen && (
             <div className="accessibility-popover glass-effect" style={{
               position: 'absolute',
@@ -156,21 +159,21 @@ export default function LandingPage({
               background: 'rgba(15, 23, 42, 0.95)',
               border: '1px solid rgba(255,255,255,0.15)'
             }}>
-              <h4 style={{ margin: '0 0 4px 0', fontSize: '14px', color: '#38bdf8' }}>{t.accessTitle}</h4>
+              <h4 style={{ margin: '0 0 4px 0', color: '#38bdf8' }}>{t.accessTitle}</h4>
               
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '12px' }}>Bahasa / Language:</span>
+                <span>Bahasa / Language:</span>
                 <button
                   className='btn-secondary'
                   onClick={() => setLanguage(language === 'id' ? 'en' : 'id')}
-                  style={{ padding: '4px 8px', fontSize: '12px' }}
+                  style={{ padding: '4px 8px' }}
                 >
                   {language.toUpperCase()}
                 </button>
               </div>
 
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '12px' }}>{t.fontSizeLabel}</span>
+                <span>{t.fontSizeLabel}</span>
                 <div className="btn-toggle-group">
                   <button className={fontSize === 'normal' ? 'active' : ''} onClick={() => setFontSize('normal')}>A</button>
                   <button className={fontSize === 'large' ? 'active' : ''} onClick={() => setFontSize('large')}>A+</button>
@@ -179,12 +182,12 @@ export default function LandingPage({
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                <span style={{ fontSize: '12px' }}>{t.colorBlindLabel}</span>
+                <span>{t.colorBlindLabel}</span>
                 <select 
                   className="modern-select" 
                   value={colorBlindMode} 
                   onChange={(e) => setColorBlindMode(e.target.value)}
-                  style={{ padding: '6px 8px', fontSize: '12px', width: '100%' }}
+                  style={{ padding: '6px 8px', width: '100%' }}
                 >
                   <option value="filter-normal">Normal</option>
                   <option value="filter-protanopia">Protanopia</option>
@@ -197,7 +200,7 @@ export default function LandingPage({
               <button 
                 className="btn-primary" 
                 onClick={handleReadLanding} 
-                style={{ padding: '8px', fontSize: '12px', marginTop: '4px' }}
+                style={{ padding: '8px',  marginTop: '4px' }}
               >
                 {t.readPageBtn}
               </button>
@@ -246,13 +249,13 @@ export default function LandingPage({
               {t.aboutDesc}
             </p>
             <div className="modal-section">
-              <h3>🎯 {t.aboutInclusivityTitle}</h3>
+              <h3>{t.aboutInclusivityTitle}</h3>
               <p>
                 {t.aboutInclusivityDesc}
               </p>
             </div>
             <div className="modal-section">
-              <h3>🛰️ {t.aboutApiTitle}</h3>
+              <h3>{t.aboutApiTitle}</h3>
               <p>
                 {t.aboutApiDesc}
               </p>
