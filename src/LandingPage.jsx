@@ -30,6 +30,15 @@ export default function LandingPage({
       colorBlindLabel: "Filter Warna:",
       accessTitle: "Pengaturan Aksesibilitas",
       fontSizeLabel: "Ukuran Teks:",
+      aboutTitle: "Tentang Aplikasi",
+      aboutDesc: "Aplikasi Web GIS ini memanfaatkan data penginderaan jauh NASA Worldview dan data objek dekat bumi (NeoWs) secara real-time. Dilengkapi fitur aksesibilitas penuh untuk semua pengguna.",
+      aboutInclusivityTitle: "🎯 Misi Inklusivitas",
+      aboutInclusivityDesc: "Aplikasi ini dirancang khusus agar dapat diakses secara optimal oleh penyandang disabilitas netra maupun gangguan persepsi warna (buta warna), menggunakan kombinasi sinyal suara (Text-to-Speech) dan filter matriks warna khusus.",
+      aboutApiTitle: "🛰️ Sumber Data & API",
+      aboutApiDesc: "Visualisasi bumi dan bencana dipasok langsung oleh API resmi NASA GIBS (Global Imagery Browse Services) dan NASA EONET. Data asteroid menggunakan NASA NeoWs.",
+      aboutDevBy: "Dibuat dan dikembangkan oleh",
+      footerDisclaimer: "Data citra satelit dan informasi benda langit disediakan oleh NASA Earthdata (GIBS / EONET). Proyek ini dikembangkan secara independen dan tidak terafiliasi secara resmi dengan NASA.",
+      footerDev: "Dikembangkan dengan fokus pada Aksesibilitas Web.",
       tabs: {
         satelit: {
           title: "Citra Satelit NASA Worldview",
@@ -59,6 +68,14 @@ export default function LandingPage({
       colorBlindLabel: "Color Filter:",
       accessTitle: "Accessibility Settings",
       fontSizeLabel: "Text Size:",
+      aboutTitle: "About The App",
+      aboutDesc: "This Web GIS application utilizes real-time NASA Worldview remote sensing data and Near-Earth Objects (NeoWs). Built with comprehensive accessibility features for all users.",
+      aboutInclusivityTitle: "🎯 Inclusivity Mission",
+      aboutInclusivityDesc: "This application is designed for optimal accessibility by visually impaired users and those with color perception deficiencies, utilizing voice feedback (Text-to-Speech) and custom color matrix filters.",
+      aboutApiTitle: "🛰️ Data Sources & API",
+      aboutApiDesc: "Earth and disaster visualizations are powered directly by official NASA GIBS (Global Imagery Browse Services) and NASA EONET APIs. Asteroid data uses NASA NeoWs.",
+      aboutDevBy: "Created and developed by",
+      footerDisclaimer: "Satellite imagery and celestial data provided by NASA Earthdata (GIBS / EONET). This project is independently developed and is not officially affiliated with NASA.",
       tabs: {
         satelit: {
           title: "NASA Worldview Satellite Imagery",
@@ -224,24 +241,24 @@ export default function LandingPage({
         <div className='modal-overlay' onClick={() => setShowAbout(false)}>
           <div className='modal-content glass-effect' onClick={(e) => e.stopPropagation()}>
             <button className='close-btn' onClick={() => setShowAbout(false)}>X</button>
-            <h2>Tentang CosmicView GIS</h2>
+            <h2>{t.aboutTitle}</h2>
             <p className="modal-intro">
-              CosmicView GIS adalah platform pemetaan interaktif yang berfokus pada inklusivitas data geospasial dan fenomena antariksa.
+              {t.aboutDesc}
             </p>
             <div className="modal-section">
-              <h3>🎯 Misi Inklusivitas</h3>
+              <h3>🎯 {t.aboutInclusivityTitle}</h3>
               <p>
-                Aplikasi ini dirancang khusus agar dapat diakses secara optimal oleh penyandang disabilitas netra maupun gangguan persepsi warna (buta warna), menggunakan kombinasi sinyal suara (Text-to-Speech) dan filter matriks warna khusus.
+                {t.aboutInclusivityDesc}
               </p>
             </div>
             <div className="modal-section">
-              <h3>🛰️ Sumber Data & API</h3>
+              <h3>🛰️ {t.aboutApiTitle}</h3>
               <p>
-                Visualisasi bumi dan bencana dipasok langsung oleh API resmi NASA GIBS (Global Imagery Browse Services) dan NASA EONET. Data asteroid menggunakan NASA NeoWs.
+                {t.aboutApiDesc}
               </p>
             </div>
             <div className="modal-footer-text">
-              Dibuat dan dikembangkan oleh <strong>Deren</strong>.
+              {t.aboutDevBy} <strong>Deren</strong>.
             </div>
           </div>
         </div>
@@ -251,8 +268,7 @@ export default function LandingPage({
         <div className='footer-content'>
           <p>© 2026 <strong>Deren</strong>. All rights reserved.</p>
           <p className="footer-disclaimer">
-            Data citra satelit dan informasi benda langit disediakan oleh <strong>NASA Earthdata (GIBS / EONET)</strong>. 
-            Proyek ini dikembangkan secara independen dan tidak terafiliasi secara resmi dengan NASA.
+            {t.footerDisclaimer}
           </p>
         </div>
       </footer>
